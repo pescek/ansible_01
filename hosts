@@ -1,2 +1,5 @@
+[localhost]
+127.0.0.1
+
 [dock_pull_cont]
 172.17.0.2
