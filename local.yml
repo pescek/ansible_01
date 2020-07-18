@@ -1,0 +1,8 @@
+---
+- name: ansible pull example
+  
+  hosts: localhost
+  tasks:
+    docker_container:
+      name: dock_pull_cont
+      image: ubnt_ssh
