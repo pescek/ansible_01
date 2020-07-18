@@ -1,8 +1,21 @@
 ---
-
-  - hosts: localhost
-    tasks:
+-
+  hosts: localhost
+  tasks:
     - name: RUN A COTAINER
       docker_container:
         name: dock_pull_cont
         image: ubnt_sshd
+        
+-
+  hosts: dock_pull_cont
+  become: true
+  become_user: root
+
+  tasks:
+      - name: copy the key over
+        authorized_key:
+            user: root
+            state: present
+            key: "{{ lookup('file', '/home/psc/.ssh/id_rsa.pub') }}"
+...
