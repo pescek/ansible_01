@@ -2,7 +2,7 @@
 -
   hosts: localhost
   tasks:
-    - name: RUN A COTAINER
+    - name: RUN A CONTAINER
       docker_container:
         name: dock_pull_cont
         image: ubnt_sshd
